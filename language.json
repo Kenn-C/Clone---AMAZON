@@ -1,0 +1,227 @@
+[
+    {
+        "id": "1",
+        "name": "GLASSES",
+        "oldPrice": "450.00",
+        "newPrice": "200.00",
+        "saled": "3,8k",
+        "origin": "Batangas",
+        "saleOff": "40"
+    },
+    {
+        "id": "2",
+        "name": "COMPUTER MOUSE",
+        "oldPrice": "350.00",
+        "newPrice": "300.00",
+        "saled": "2,7k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "20"
+    },
+    {
+        "id": "3",
+        "name": "Black Canvas",
+        "oldPrice": "340.00",
+        "newPrice": "250.00",
+        "saled": "1,7k",
+        "origin": "Batangas City",
+        "saleOff": "27"
+    },
+    {
+        "id": "4",
+        "name": "Formal Necktie (Assorted)",
+        "oldPrice": "450.00",
+        "newPrice": "400.00",
+        "saled": "2,7k",
+        "origin": "Batangas City",
+        "saleOff": "20"
+    },
+    {
+        "id": "5",
+        "name": "Wireless Mechanical Keyboard",
+        "oldPrice": "600.00",
+        "newPrice": "450.00",
+        "saled": "1,1k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "30"
+    },
+    {
+        "id": "6",
+        "name": "Wireless Mouse",
+        "oldPrice": "400.00",
+        "newPrice": "300.00",
+        "saled": "2,3k",
+        "origin": "Metro Manila",
+        "saleOff": "25"
+    },
+    {
+        "id": "7",
+        "name": "Fountain Pen Ink",
+        "oldPrice": "350.00",
+        "newPrice": "250.00",
+        "saled": "3,2k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "30"
+    },
+    {
+        "id": "8",
+        "name": "Fountain Pen (Jinhao X750)",
+        "oldPrice": "500.00",
+        "newPrice": "400.000",
+        "saled": "1,2k",
+        "origin": "Metro Manila",
+        "saleOff": "25"
+    },
+    {
+        "id": "9",
+        "name": "Monte Marte Acrylic Paint Set",
+        "oldPrice": "800.00",
+        "newPrice": "400.00",
+        "saled": "3,1k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "50"
+    },
+    {
+        "id": "10",
+        "name": "Mechanical Keyboard",
+        "oldPrice": "755.00",
+        "newPrice": "600.00",
+        "saled": "1,1k",
+        "origin": "Overseas",
+        "saleOff": "15"
+    },
+    {
+        "id": "11",
+        "name": "Artis's Paint Set",
+        "oldPrice": "1000.00",
+        "newPrice": "850.000",
+        "saled": "5,2k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "20"
+    },
+    {
+        "id": "12",
+        "name": "Wireless Mechanical Keyboard (Yellow & Black)",
+        "oldPrice": "500.00",
+        "newPrice": "250.000",
+        "saled": "3,1k",
+        "origin": "Batangas City",
+        "saleOff": "50"
+    },
+    {
+        "id": "13",
+        "name": "Men's Fashion Watch (Battery Operated)",
+        "oldPrice": "900.00",
+        "newPrice": "780.000",
+        "saled": "3,8k",
+        "origin": "Overseas",
+        "saleOff": "42"
+    },
+    {
+        "id": "14",
+        "name": "Artist's Paintbrush Set",
+        "oldPrice": "310.00",
+        "newPrice": "280.00",
+        "saled": "1,9k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "15"
+    },
+    {
+        "id": "15",
+        "name": "Oil Paints (Assorted)",
+        "oldPrice": "150.00",
+        "newPrice": "100.00",
+        "saled": "7,1k",
+        "origin": "Metro Manila",
+        "saleOff": "30"
+    },
+    {
+        "id": "16",
+        "name": "Artist's Toning Paintbrushes",
+        "oldPrice": "300.00",
+        "newPrice": "200.00",
+        "saled": "2,7k",
+        "origin": "Batangas City",
+        "saleOff": "20"
+    },
+    {
+        "id": "17",
+        "name": "Fountain Pen Ink (Limited Stock)",
+        "oldPrice": "400.00",
+        "newPrice": "345.00",
+        "saled": "1,2k",
+        "origin": "Overseas",
+        "saleOff": "21"
+    },
+    {
+        "id": "18",
+        "name": "HBW ACrylic Paint",
+        "oldPrice": "95.00",
+        "newPrice": "70.00",
+        "saled": "5,6k",
+        "origin": "National Bookstore, Batangas",
+        "saleOff": "10"
+    },
+    {
+        "id": "19",
+        "name": "Fountain Pen (Jinhao X450)",
+        "oldPrice": "550.00",
+        "newPrice": "300.00",
+        "saled": "1,1k",
+        "origin": "Batangas City",
+        "saleOff": "36"
+    },
+    {
+        "id": "20",
+        "name": "Fountain Pen (Jinhao X450)",
+        "oldPrice": "400.00",
+        "newPrice": "370.00",
+        "saled": "1,1k",
+        "origin": "Overseas",
+        "saleOff": "15"
+    },
+    {
+        "id": "21",
+        "name": "Fountain Pen (Black & Gold Nib)",
+        "oldPrice": "450.000",
+        "newPrice": "400.000",
+        "saled": "1,9k",
+        "origin": "Overseas",
+        "saleOff": "20"
+    },
+    {
+        "id": "22",
+        "name": "Silver Artist's Paintbrush Set",
+        "oldPrice": "500.00",
+        "newPrice": "395.00",
+        "saled": "2,3k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "23"
+    },
+    {
+        "id": "23",
+        "name": "Plain Black Necktie",
+        "oldPrice": "200.00",
+        "newPrice": "170.00",
+        "saled": "3,8k",
+        "origin": "Batangas City",
+        "saleOff": "27"
+    },
+    {
+        "id": "24",
+        "name": "Vintage Hanging Wall Clock",
+        "oldPrice": "700.00",
+        "newPrice": "580.00",
+        "saled": "1,9k",
+        "origin": "Batangas City",
+        "saleOff": "20"
+    },
+    {
+        "id": "25",
+        "name": "Wall Clock (Roman Num. Engraved)",
+        "oldPrice": "480.00",
+        "newPrice": "435.00",
+        "saled": "1,2k",
+        "origin": "Alangilan Batangas",
+        "saleOff": "13"
+    }
+]
