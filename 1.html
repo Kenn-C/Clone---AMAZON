@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAZON</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            background-color: rgb(95, 92, 90);
+            padding: 0;           
+        }
+
+        .content {
+         padding-top: 50px;
+         padding-bottom: 50px;            
+        }
+        
+        .product {
+
+            border: 1px black solid;
+            height: auto;
+            width: 100%;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            
+        }
+       .left-side{
+             width: 40%;
+          
+       }
+       .right-side{
+        width: 100%;
+        width: 850px;
+        height: 550px;
+        background-color: rgb(114, 110, 110);
+        overflow: auto;
+        scrollbar-width: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family :Arial, Helvetica, sans-serif;
+        padding-left: 20px;
+        
+       }
+        
+        .product-image {
+           
+           width: 380px;
+           height: 380px;
+          
+
+        }
+
+        .arrow-button {
+           
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transform: translate(0px,-180px);
+            font-size: 20px;
+        }
+        .left-arrow {
+            background-color: #ebbd67;
+        }
+        .right-arrow {
+            background-color: #ebbd67;
+            
+        }
+        .product-info {
+            font-size: 1.2em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .product-name {
+            font-size:1.5em;
+            
+           
+            
+        }
+        .rating {
+            color: #ffcc00;
+            
+            
+        }
+
+        .details {
+            display: none;
+            
+          
+           
+                        
+        }
+        .price{
+            font-weight: bold;
+            
+        }
+        .show-button {
+            position: absolute;
+            
+        }
+        
+           
+           
+        
+        .toggle-button {
+            background-color: #eeda81;
+            cursor: pointer;
+        }
+        .cart {
+            position: relative;
+            right: -200px;
+            background-color: #eeda81;
+            top: -100px;
+            height: 40px;
+        }
+        .buy {
+            position: relative;
+            right: -100px;
+            top: -30px;
+            height: 40px;
+            background-color: #eeda81;
+        }
+        
+        .mySlides img{
+            width: 100%;
+            height: 400px;
+            width: 100%;
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+            
+            top: -1200px;
+            right: 750px;
+            
+        }
+        .Slideshow-container {
+            width: 1200px;
+            padding-left: 200px;
+            margin-bottom: 10px;
+           
+           
+
+        }
+        .myslides {
+            display: none;
+            width: 100%;
+          
+            top: 70px;
+            right: -200px;
+            padding-right: -500px;
+        }
+        .myslides img{
+            width: 150px;
+            height: 300px;
+        }
+        
+        
+        .see {           
+            display: flex;
+          
+            top: -810px;
+            left: -100px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 20px;            
+            padding: 10px;
+            transform: translate(400px,200px);
+        }
+        .see #hidden-btn{
+            display: none;
+        }
+        .head {
+          height: auto;
+          
+
+          
+          
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+           
+            bottom: 0;
+           
+            height: 500px;
+            text-align: center;
+            
+          }
+          
+          .column {
+            float: left;
+            width: 20%;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+           
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+          }
+          .column a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 25px;
+            
+          }
+          .column a:hover {
+            text-decoration: underline;
+          }
+          .foot {
+            width: 100px;
+            height: 100px;
+            padding-left: 680px;
+          }
+    
+    
+    </style>
+    <meta http-equiv="refresh" content="">
+</head>
+<body>
+
+
+<header class="head">
+    <img src="C:/PROJECT AMAZONwdb/static/home/header2.png"
+         style="width: 100px;">
+
+    <div class="Slideshow-container">
+        <div class="myslides fade">
+            <img src="static/home/amazon1.png"
+                 style="width:100%">
+        </div>
+        <div class="myslides fade">
+            <img src="static/home/off1.png"
+                 style="width:100%">
+        </div>
+        
+    </div>
+
+</header>
+
+<section class="content">
+
+
+    <div class="product">
+        <div class="left-side">
+            <div class="product-image-container">
+                <button class="arrow-button left-arrow" onclick="prevImage(0)">&#8249;</button>
+                <img class="product-image"
+                     src="static/img/home/1.PNG"
+                     alt="Product Image">
+                <button class="arrow-button right-arrow" onclick="nextImage(0)">&#8250;</button>
+            </div>
+            <div class="product-info">
+                <div><h1 class="product-name">Glasses</h1></div>
+                <div class='rating'>Ratings: ★★★★★</div>
+                <div class='price-details'>Price: 200</div>
+                <div class='location'>Ships From:
+                    Philippines, Batangas
+                </div>
+                <div class='description'>Product Description</div>
+                <button class="toggle-button" onclick="toggleDetails(0)">Show/Hide Details</button>
+                <button class="cart" onclick="addToCart('Glasses', '200', 'static/home/1.PNG')">ADD TO CART</button>
+                <button class="buy" onclick="openProductPage('Glasses', '200', 'Philippines: Batangas', '40', 'static/home/1.PNG')">BUY NOW</button>
+    
+                <div class="see">
+                    
+                    <div id="hidden-btn">
+                        
+                    </div>
+                </div>
+    
+    
+                <div class="details" style="display: none;">
+                    <p>Details:
+                    <li>If you want computer eyeglasses and protection from digital screen, upgrade to our Con-Strain blue
+                        light lens by selecting it when adding to cart.
+                    </li>
+                    <li>Disclaimer: All our specs (frames with clear lens) have replaceable lens. From experience, some
+                        optical shops do not service frames that are not purchased
+    
+                        from them or will inform the client that the frame is not replaceable. In this case, try other
+                        optical shops as there are many that accept lens replacement for any frames.
+                    </li>
+    
+                    <li>Please take note that the usability of your eyewear (lifespan) will still depend on how you handle
+                        or take care of it.
+                    </li>
+                    </p>
+                </div>
+            </div>
+    
+    
+        </div>
+
+        <div class="right-side">
+            <h1 >&#8369;200.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2 >
+                ABOUT THIS ITEM
+               </h2>
+               <p>
+                <p>DESIGNED EXCLUSIVELY BY PEEPERS - Our Blue Light Blocking Reading Glasses and No Correction Frames are truly next level thanks to trend-forward design and thoughtful craftsmanship.</p>
+                <p>PEEPERS BLUE LIGHT FOCUS LENSES - Utilize proprietary baked-in technology that filters over 40%+ of High-Energy (HEV) Blue Light from digital devices and other potentially harmful 
+                sources reducing eye strain and making screen time easier on the eyes</p>
+                <p>UV400 PROTECTION - Blocks 99.9% of UVA/UVB light rays</p>
+                <p>7-LAYER ANTI-REFLECTIVE & DUAL ANTI-SCRATCH COATING - Enhances contrast and visual sharpness by reducing reflections and glare on the surface of the lens while providing long-lasting lens protection</p>
+                <p> THE BEAUTY OF SELF-EXPRESSION THROUGH EYEWEAR - Stylish optical quality eyewear crafted for comfort with lightweight frames, spring hinges and unique lens clearness for comfort and style
+            </p>
+
+
+        </div>
+
+    </div>
+
+    <!--Second-->
+    <div class="product">
+        <div class="left-side">
+                <div class="product-image-container">
+                    <button class="arrow-button left-arrow " onclick="prevImage(1)">&#8249;</button>
+                    <img class="product-image"
+                        src="static/home/2.PNG"
+                        alt="Product Image">
+                    <button class="arrow-button right-arrow" onclick="nextImage(1)">&#8250;</button>
+                </div>
+                <div class="product-info">
+                    <div><h1 class="product-name">Computer Mouse</h1></div>
+                    <div class='rating'>Ratings: ★★★★★</div>
+                    <div class='price-details'>Price: 300</div>
+                    <div class='location'>Alangilan, Batangas</div>
+                    <div class='description'>Product Description</div>
+                    <button class="toggle-button" onclick="toggleDetails(1)">Show/Hide Details</button>
+                    <button class="cart" onclick="addToCart('Computer mouse (Jinhao x450)', '300', 'static/home/2.PNG')">ADD TO CART</button>
+                    <button class="buy" onclick="openProductPage('Computer mouse (Jinhao x450)', '300', 'Alangilan: Batangas', '40', 'static/home/2.PNG')">BUY NOW</button>
+                    
+
+                        <div class="details" style="display: none;">
+                            <p>
+                            <p> Built-in rechargeable battery, can be used 1-2 months after only 3-4 hours charging</p>
+
+                            <li>Bluetooth: Yes</li>
+
+                            <li>Accurate tracking: Uses professional IC, positioning</li>
+
+                            <li>Accuracy</li>
+
+                            <li>Silence key: Silence key for clicking silence</li>
+
+                            <li>High resolution: Max 1600 DPI high resolution for fluid motion</li>
+
+                            <li>Fashionable slim design: Slim design for sleek look and portable use</li>
+                            </p>
+                    </div>
+                </div>
+    </div>
+        <div class="right-side">
+            <h1 >&#8369;300.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>4 LIGHTING MODE】Wired LED mouse adopt interesting rainbow lighting design, one button to adjust 4 RGB color effects: Rainbow Streaming Light(Default), Rainbow Breathing Light, Neon, Floating Light. The RGB backlit also can be turned off as you want</li>
+               <li>【Ergonomic Design】Places your hand in a natural relax position using a unique raised design, preventing hand fatigue and reducing muscular strain (As compared with a traditional non-vertical mouse)</li>
+               <li>【High-Precision and Durability】1600 DPI movement resolution enables responsive cursor control for precise tracking, works on most surfaces. Tested over 3 million times keystroke life, the wired mouse ensures responsive click and longer lifespan for daily use</li>
+               <li>【Silent and Easy to Use】Silent USB mouse keep you focus on your work without disturbing others. The simple USB corded mouse, just plug and play. Eliminates the trouble of replacing batteries, save your time and improve your study efficiency or work efficiency</li>
+               <li>【Universal Compatibility】The computer mice has a wide range of compatibility, compatible with computer, laptop, desktop, PC, laptop, Windows XP/Vista/7/8/10></li>
+            </div>
+    </div>
+    <!--Third-->
+    <div class="product">
+        <div class="left-side">
+                <div class="product-image-container">
+                    <button class="arrow-button left-arrow" onclick="prevImage(2)">&#8249;</button>
+                    <img class="product-image"
+                        src="static/home/3.PNG"
+                        alt="Product Image">
+                    <button class="arrow-button right-arrow" onclick="nextImage(2)">&#8250;</button>
+                </div>
+                <div class="product-info">
+                    <div><h1 class="product-name">Black Canvas</h1></div>
+                    <div class='rating'>Ratings: ★★★★★</div>
+                    <div class='price-details'>Price: 250</div>
+                    <div class='location'>Philippines: Batangas</div>
+                    <div class='description'>Product Description</div>
+                    <button class="toggle-button" onclick="toggleDetails(2)">Show/Hide Details</button>
+                    <button class="cart" onclick="addToCart('Black Canvas', '250', 'static/home/3.PNG')">ADD TO CART</button>
+                    <button class="buy" onclick="openProductPage('Black Canvas', '250', 'Philippines: Batangas', '40', 'static/home/3.PNG')">BUY NOW</button>
+                    <div class="details" style="display: none;">
+                        <p>
+                            <li>🖌 Cash on Delivery
+                            <li> 🖌 Items are On Hand
+                        <li>🖌 Delivery Period: 2-3 days within Metro Manila</li>
+                        5-7 days Outside Metro Manila</li>
+                        7-9 days Visayas</li>
+                        12-15 days Mindanao</li>
+
+                        <li>⚠️ Please CHOOSE THE CORRECT variation so we can avoid mistakes</li>
+                        <li>⚠️ No cancellation.</li>
+                        <li>⚠️ We accept “RETURNS” if the item is not yet worn or used. And buyer will shoulder the return
+                            shipping cost, because we make sure the product’s quality before shipping it out.
+                        </li>
+
+                        <li>🛍 Our items are as stated in description.
+                            🛍 The items are 100% NEW.
+                            🛍 If the item you received is defective, please contact us immediately.
+                        </li>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <div class="right-side">
+            <h1 >&#8369;250.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>100 % COTTON CANVAS – Made from cotton with medium texture, higher tinting strength, and excellent touching sense. The cotton surface of the painting canvas doesn’t shrink and is stable in every dimension. The cotton canvas holds paints well and keeps the paints with their natural tones and glossiness.</li>
+                <li>PINEWOOD STRETCHER BARS–Standard size for easy framing and hanging on the wall. Wood structures with mortise and tenon connection ensures the frames firm and sturdy. Canvases are stretched tightly onto the bars and back stapled to create clean edges. Without deformation, they are tough enough for impasto and acrylic pouring.</li>
+                <li>QUADRUPLE PRIMED GESSO - 8 ounce gesso primed medium grain canvas keeps the painting surface ready to paint, collage, draw, sketch and illustrate with excellent tinting strength and does not crumble or crack. Suitable for all kinds of painting materials, e.g, oil, acrylic, watercolor, gouache, pastels, and tempera. Works especially great for oil and acrylic color to keep your paintings bright and glossy.</li>
+                <li>INDIVIDUALLY PACKED – Every other canvas is vacuum packed. Lightweight and easy to store and carry. Applied to create festival/party ornaments, centerpieces, kids crafting, miniatures, theme paintings, table place cards, hobby projects, and other decorative paintings. Or use as black backgrounds. Perfect for creating desktop inspiration, themed visual library, clip-style collage, tabletop easel, shelf display, advertising posters, and graffiti art.</li>
+                <li>SPECIFICATIONS - Canvas Size: 8x10 Inch/ 4 Pack. Cotton surface unprimed weight - 4 oz. & primed weight - 8 oz. Ideal for kids, students, adults, beginners as well as professionals with different painting levels. Safe with AP and CE verified certifications.</li>
+        </div>
+    </div>
+    <!--Fourth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(3)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/4.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(3)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Formal Tie</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 400</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(3)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Formal Tie', '400', 'Philippines: Batangas', '40', 'static/home/4.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Ready Stock!!!
+
+                    Color: 28 colors can choose (if can't choose need model,can leave order message tell us Model)
+
+                    Product Description
+                    Material: Polyester.
+                    Length: 57.08"(145cm)
+                    Width: 3.15"(8 cm) at widest,1.38"(3.5cm) at narrowest
+                    Condition: 100% Brand New,High-quality.
+                    Package includes: 1pc Fashion Neck Tie in plastic bag.</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;400.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>Classic formal accessory: This mens tie is a classic and essential accessory for any formal occasion. It adds a touch of sophistication and elegance to your outfit.</li>
+                <li>Solid color design: Featuring a solid color design, this tie is versatile and can be paired with various shirt and suit combinations. Choose from a range of colors including pink, purple, red, black, blue, and burgundy.</li>
+                <li>High-quality materials: Made from premium silk, this mens tie offers a luxurious and smooth texture. It is crafted with attention to detail, ensuring durability and long-lasting wear.</li>
+                <li>Perfect fit and length: With its standard length and width, this tie is designed to provide a perfect fit for most men. It can be easily adjusted and tied in various styles to suit your preference.</li>
+                <li>Ideal gift for men: Whether it's for a birthday,choir,orchestra, wedding,halloween costume , anniversary, quackity cosplay or special occasion, this mens tie makes a thoughtful and practical gift for any man in your life.</li>
+                <h3>MORE ABOU THIS PRODUCT</h3>
+                <li>Package Dimensions ‏ : ‎ 10 x 2 x 0.1 inches; 1.6 ounces</li>
+                <li>Department ‏ : ‎ mens</li>
+                <li>Date First Available ‏ : ‎ July 29, 2023</li>
+                <li>Manufacturer ‏ : ‎ Trilece
+                <li>ASIN ‏ : ‎ B0CD3BNR3Q</li>
+                <li>Best Sellers Rank: #14,016 in Clothing, Shoes & Jewelry (See Top 100 in Clothing, Shoes & Jewelry)
+                #11 in Men's Neckties</li>
+    </div>
+    </div>
+    <!--Fifth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(4)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/5.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(4)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Wireless Mechanical Keyboard</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 450</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(4)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Wireless Mechanical Keyboard', '450', 'Philippines: Batangas', '40', 'static/home/5.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Wired Mechanical Gaming Keyboard up to 60 hours battery life with LED off and 30 hours with LED on,
+                    easily switch between wired and wireless mode by plugging in the USB cable
+
+                    Small Compact Mechanical Gaming Keyboard Tenkeyless TKL with Custom Dustproof Switches (Cherry Red
+                    equivalent) Linear quiet click sound, fast action with minimal resistance without a tactile bump
+                    feel, for ultimate PC gaming performance
+
+                    RGB Backlit Mechanical Gaming Keyboard 18 different preset RGB lighting modes plus 1 User
+                    programable mode 9 different colors 6 backlight brightness levels, breathing speed Precision
+                    engineered keycaps offering crystal clear uniform backlighting
+
+                    Anti Ghosting, ALL 70 keys are conflict free n-Key Rollover for ultimate Gaming performance,
+                    Non-Slip Ergonomic, splash-proof Design with adjustable typing angle, WIN Key can be disabled
+
+                    PC Gaming Keyboard Compatibility Windows 10, 8, 7, Vista, XP, Limited Mac OS keyboard support. Works
+                    well with all major Computers Brands and Gaming PCs, Xbox, PS4 and others</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;450.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>
+                Full Size Mechanical Keyboard - RK100 wireless mechanical keyboard is 96% full size with compact 100 keys, which is solid, stable and durable. Especially suitable for the mechanical keyboard starters during gaming or working.
+                <li>Customizable RGB Backlight- This RK100 gaming keyboard provides 18 RGB backlight modes, 8 monochrome backlight modes, and 1 full-color backlight. The software allows users to customize the lighting, making it brighter and more enjoyable for personalization.</li>
+                <li>Three Modes Connectivity - This mechanical keyboard includes 2.4Ghz wireless, Type-C-USB 2.0 wired and bluetooth 5.1 connections. And RK100 gaming keyboard could be connected with up to 3 devices via Bluetooth5.1; N-key rollover (NKRO) in the wired mode, all 100 keys are conflict free.</li>
+                <li>Hot-swappable Switches - RK ROYAL KLUDGE RK100 wireless keyboard can be hot swapped at wish and replaced by all of MX-similar mechanical switches (including Gateron, Cherry, etc.), supporting 3-pin/5-pin switches. This wireless keyboard is available in blue/brown/red switch.</li>
+                <li>3 USB Ports - This hot swappable keyboard is armed with a 3750mAh large battery and geared with 2 built-in USB pass-through ports and 1 Type-C port, this wireless keyboard is allowed to back up more facilities and works for long-time gaming/working. This gaming keyboard is compatible with Win/Mac dual system, unlimited use.</li>
+                </li>
+                <h3>MORE ABOUT THIS ITEM</h3>
+
+                <li>
+                    Product Dimensions:	14.49 x 4.1 x 1.6 inches</li>
+                    <li>Item Weight:	2.48 pounds</li>
+                    <li>Manufacturer:	RK ROYAL KLUDGE</li>
+                    <li>ASIN:	B08JCV3J5P</li>
+                    <li>Batteries:	1 Lithium Ion batteries required. (included)
+                </li>
+
+    </div>
+    </div>
+    <!--Sixth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(5)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/6.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(5)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Wireless Mouse</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 300</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(5)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Wireless Mouse', '300', 'Philippines: Batangas', '40', 'static/home/6.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details: Mute wireless gaming mouse G707
+
+                    Working mode: photoelectric micro-movement: mechanical micro-movement life: 30-50 million times
+                    Size: 121-130mm hand type: right-handed type Features system: MacOS, Windows other dark light
+                    effects: the highest DPI: 2000 or more keys: 5 -8 Warranty period: two years Connection mode:
+                    wireless 2.4G Color: black
+
+                    With a rechargeable power usb cable</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;300.00</h1>
+        <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+        <p >FREE DELIVERY ON '' NATIONWIDE</p>
+        <p >Ships from: Amazon</p>
+         <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+           <p >Support: Product support included</p>
+
+           <h2>ABOUT THIS ITEM</h2>
+
+           <li>✅ 5-LEVEL ADJUSTABLE DPI: 1️⃣ 5-level DPI settings (800/1200/1600/2000/4800) to meet your multiple needs, either for daily work or gaming. The factory default is 1200DPI, with DPI gear indication,which will indicated the current DPI gear speed by LED flash times (1/2/3/4/5 times). 2️⃣ 2 kind polling rate adjustment :125Hz/250Hz，the factory default is 125Hz. Press the right button + the middle buttom for 3 seconds to switch (during the switching process, LED will flash 5 times).</li>
+           <li>✅ USB PLUG AND PLAY & STABLE CURSOR: USB Nano Receiver can be stored within the back of the mouse, can suport usb plug and play. Besides, 2.4GHz Wireless provides a powerful, reliable connection, transmission distance up to 33ft (10m) .Which eliminated delays, interference, accurate orbit & fast data transmission . Great wireless mouse for home and office.</li>
+           <li>✅ ANTI-SLIP & ANTI-SWEAT ERGONOMIC DESIGN: E-YOOSO Ergonomic Mouse is made of anti-slip and anti-sweat custom material, super durable. E-1010 Ergonomic PC mouse with backward and forward button, make your web surfing more efficient, and perfect performance for more than 5,000,000 keystrokes!</li>
+           <li>✅ 18 MONTHS BATTERY LIFE & POWER SAVING MODE: E-YOOSO Wireless mouse with 18 months battery life. The wireless mouse with smart auto sleep mode, when lower power consumption, the mouse will enter the automatic sleep state to save power if you don‘t use it for 8 minutes,then click mouse runs on again.</li>
+           <li>✅ UNIVERSAL COMPATIBILITY & WIDE USE: The wireless optical MacBook mouse is compatible with Windows 11, 10, 8.1, 8, 7, XP, Vista, Linux, Chromebook, Mac OS(Side buttons are not available on Mac), Surface Pro, Surface, and Any Device with USB Ports. As well as compatible for PC, Laptop, MacBook and more. Great optical computer mice for various activities!</li>
+    </div>
+    </div>
+    <!--Seventh-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(6)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/7.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(6)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Fountain Pen Ink (Single)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 250</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(6)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Fountain Pen Ink (Single)', '250', 'Philippines: Batangas', '40', 'static/home/7.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    A special drawing ink for fountain pens, Pelikan Fount India is designed to have the characteristics
+                    of Indian ink (ie. waterproof and permanent archive quality)
+                    but is safe for use in a fountain pen (ordinary Indian ink would dry and clog a fountain pen and
+                    render it useless).
+                    However, we still recommend that you empty and flush your pen with clean water after use and do not
+                    ever let the ink dry in your pen. Contains nanocarbon particles.</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;250.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>Created using the highest standards and variations of color</li>
+                <li>Ink names derived from Japanese natural landscapes and plants</li>
+                <li>Enjoy the intense and subtle colors of Japan as you write</li>
+                <li>TRUSTED QUALITY: We've been making pens for over 100 years. Whether you're taking notes, stocking up on school or office supplies, or writing in a bullet journal, Pilot has the perfect pen for you</li>
+                <li>POWER TO THE PEN: Pilot makes exceptional writing instruments to suit all your needs. We have fountain, ballpoint, retractable, erasable & gel ink pens, whiteboard markers & more for every writing style.</li>
+
+    </div>
+    </div>
+    <!--Eigth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(7)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/8.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(7)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Fountain Pen (Jinhao x750)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 400</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(7)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Fountain Pen (Jinhao x750)', '400', 'Philippines: Batangas', '40', 'static/home/8.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details: Type: Fountain pen
+                    Pen: Lava red barrel, silver clip and trim
+                    Cap: Snap on type cap
+                    Converter: Removable ink converter( may be replaced with international standard size ink cartridge.
+                    Also, you may use bottled ink.)
+                    Nib: M
+                    Length: 14cm/5.51"(approx)
+                    Diameter: about 13mm/0.51"(approx)
+                    Quantity: 1pc
+                    Note: No ink
+                    Note: Size for manual measurement, there may be a 0 to 1 cm error, belongs to the normal phenomenon.
+                    Please understand, Thank you.
+                    Note: Due to the difference between different monitors, the picture may not reflect the actual color
+                    of the item. Please understand, Thank you.
+                    Package includes:
+                    1 x Fountain pen</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;400.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <p>
+                Cap : Push Type, Length 141mm, Diameter 14mm, Pen Weight 37g</li>
+                <p>Package : 5 pens & 5 removable converter (work with all bottle ink ). It is really beautiful and durable fountain pens.</p>
+                <p>Cartridge : International standard ( Fit the cartridges in our store, ASIN B01EWSCN50 )</p>
+                <p>The stainless steel fine nib ensure you have smooth handwriting experience .Perfect for gift ,signature and business trip.</p>
+                <p>Feel free to contact us if there are any product problems. We would try our best to provide you the best service.
+                </p>
+
+    </div>
+    </div>
+    <!--Ninth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(8)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/9.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(8)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Monte Mart Acrylic Paint (Set)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 400</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(8)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Monte Mart Acrylic Paint (Set)', '400', 'Philippines: Batangas', '40', 'static/home/9.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:• Dries to a semi-matte finish.
+                    • Good coverage and a creamy texture.
+                    • Fast drying time allows you to layer paint quickly without muddying your colors.
+                    • Suitable for most surfaces including canvas, wood, MDF, leather, air-dried clay, plaster,
+                    cardboard, paper and some plastics. </p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;400.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>
+                <li>Brand:	‎Mont Marte</li>
+                <li>Color:	‎12 mixed colors</li>
+                <li>Finish Type:	‎Metallic</li>
+                <li>Size:	‎12 Count (Pack of 1)</li>
+                <li>Item Volume:	‎432 Milliliters</li>
+                <li>Unit Count:	‎14.4 Fl Oz</li>
+                <li>Paint Type:L	‎Acrylic</li>
+                <li>Surface Recommendation:	‎Canvas,Paper,Wood</li>
+                <li>Item Form:	‎Liquid</li>
+                <li>Age Range: (Description)	‎Adult</li>
+                <li>Package Information:	‎Tube</li>
+                <li>Manufacturer:	‎Mont Marte</li>
+                <li>Part Number:	‎PMMT1236</li>
+                <li>Item Weight:	‎1.43 pounds</li>
+                <li>Product Dimensions:	‎13.19 x 5.51 x 1.18 inches</li>
+                <li>Item model number:	‎PMMT1236</li>
+                <li>Finish:	‎Metallic</li>
+                Item Package Quantity:	‎1</li>
+               </li>
+
+    </div>
+    </div>
+    <!--Tenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(9)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/10.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(9)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Mechanical Keyboard</div>
+            <div class='rating'>Ratings:★★★★★</div>
+            <div class='price-details'>Price: 600</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(9)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Mechanical Keyboard', '600', 'Philippines: Batangas', '40', 'static/home/10.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details: Number of Keys: 68 keys
+                    Switches: Keychron Mechanical
+                    Number of Multimedia Keys: 12
+                    Frame Material: ABS
+                    Keycap Material: ABS
+
+                    Connectivity and Power
+                    System: Windows/Android/Mac/iOS
+                    Battery: 4000mAh Rechargeable li-polymer battery
+                    BT Working Time: Up to 570 hours (Lab test result may vary by actual use)
+                    Charging Time: Around 3 hours
+                    Connection: Bluetooth and Type-C cable
+                    Bluetooth version: 5.1
+
+                    Physical Dimension:
+                    Dimension (Plastic frame version): 313 x 104mm
+                    Weight: About 530g / 18.6oz</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;600.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>
+                <li>Mini portable 60% compact layout: MK-Box is a 68 keys mechanical keyboard have cute small size, separate arrow keys and all your F-keys you need, can use it for gaming or work while saving space.</li>
+                <li>Mechanical red switch: characterized for being linear and smoother, slight key sound has no paragraph sense with minimal resistance, but fast action without a tactile bump feel which makes it easier to tap the keyboard.</li>
+                <li>Classic charming blue LED backlit: Customize multiple illuminated LED light effects, supports about 15 backlight modes, press Fn + Ins can control it, FN + ←/→ control backlight speed, FN + ↑/↓ control backlight brightness.</li>
+                <li>Full anti-ghosting keyboard: all 68 keys are no conflict, black grey red mash up design, ergonomic suspension double-color injection keycap, double kickstand feet adjustable typing angle and detachable usb cable, both practical and beautiful.</li>
+                <li>Extensive compatibility: MageGee MK-Box mechanical keyboards use USB 2.0 connector making it compatible with Windows (2000, XP, ME, Vista, 7, 8), Linux and Mac, plug and play, no drivers or software required.
+               </li>
+
+    </div>
+    </div>
+    <!--Eleventh-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(10)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/11.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(10)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Artist's Paint Set</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 850</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(10)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Artist's Paint Set', '850', 'Philippines: Batangas', '40', 'static/home/11.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    1.Acrylic paint set with 24 kinds of vivid, richly pigmented colors,12 ml for each one .
+                    2.Non-toxic, dries quickly and long lasting vibrant.
+                    3.Great painting supplies for teens or adult artists, students and more professional or beginners.
+                    4.Wide range of surfaces, such as canvas, ceramic, wood, clay, walls, nails, crafts and more.
+                    5.Children use acrylic paints in art class and leisure time to develop imagination skills and adults
+                    paint to relax and boost creativity, great for creating decorative art for your home.
+                    6.Multi-purpose acrylic paint kit also perfect gifts for Art Students and kids, etc.</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;850.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>🎨24 PACK PAINT SET WITH 3 BRUSHES - Each of acrylic paint set for paintings has vibrant 24 colors which consists of 24 bottles of 2 oz/60 ml. Art paints with bonus 3 free paint brushes included(artist brushes for blending acrylic paint), 24 colors acrylic paint sets for adults, value pack acrylic paint kit will put your artistic talent into fine crafts masterpiece.</li>
+                <li>🎨PREMUIM QUALITY PAINT- Premium outdoor/indoor use craft acrylic paint glide on smoothly, dry quickly and stay as beautiful as the day they were painted. The creamy consistency and high pigments offer great covering power for large areas and fine details. Those highly pigmented colors are great to produce true, consistent shades on painting art, ideal for professional artists, young aspiring artists, painting lovers and kids. ASTM D-4236 and EN71-3 (CE) certified, non-toxic and safe.</li>
+                <li>🎨PERFECT GIFT CRAFT PAINT- Each of our acrylic paint bottles is safe, non-toxic and has professional quality so it can be rich gift for kid (children), students, adults, for both beginners and artists with great experience in arts. Adults and kids love the versatility of our waterproof acrylic paint set. Fantastory acrylic paint sets with exquisite packging box will be a great gift idea at Christmas, Halloween, Birthday and more festivals.</li>
+                <li>🎨EASY MIX & INFINITE RANGE OF COLOR - The clarity and brilliance allow for superb color mixing to provide a bigger color palette of shades and tones. Let your imagination run wild and create an infinite number of hues in a few seconds with our easy-to-mix 24 assorted colors acrylic paints. Paints set is suitable for multi-surface, including glass (bottles, vase, etc.), nail, wood, canvas, rocks, stone, ceramic, clay, shoe, plastic, paper, fabric, Styrofoam, blackboard, paper, plaster and more.</li>
+                <li>🎨100% SATISFACTION GUARANTEE - As a client focused company, we offer 100% Satisfaction Guarantee. We’re confident that you'll love our our 24 vivid classic colors acrylic paint kit art supplies. However, if you are dissatisfied for any reason, we will take care of it for you, just let us know for a fast, no-hassle refund or product free replacement. Don’t delay it further. Visit our product page to learn more about products and order the rich pigments acrylic paint you’ll ever own.</li>
+
+    </div>
+    </div>
+    <!--Twelveth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(11)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/12.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(11)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Wireless Mechanical Keyboard (Yellow & Black)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 250</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(11)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Wireless Mechanical Keyboard (Yellow/Black)', '250', 'Philippines: Batangas', '40', 'static/home/12.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Wired Mechanical Gaming Keyboard up to 60 hours battery life with LED off and 30 hours with LED on,
+                    easily switch between wired and wireless mode by plugging in the USB cable
+
+                    Small Compact Mechanical Gaming Keyboard Tenkeyless TKL with Custom Dustproof Switches (Cherry Red
+                    equivalent) Linear quiet click sound, fast action with minimal resistance without a tactile bump
+                    feel, for ultimate PC gaming performance
+
+                    RGB Backlit Mechanical Gaming Keyboard 18 different preset RGB lighting modes plus 1 User
+                    programable mode 9 different colors 6 backlight brightness levels, breathing speed Precision
+                    engineered keycaps offering crystal clear uniform backlighting
+
+                    Anti Ghosting, ALL 70 keys are conflict free n-Key Rollover for ultimate Gaming performance,
+                    Non-Slip Ergonomic, splash-proof Design with adjustable typing angle, WIN Key can be disabled
+
+                    PC Gaming Keyboard Compatibility Windows 10, 8, 7, Vista, XP, Limited Mac OS keyboard support. Works
+                    well with all major Computers Brands and Gaming PCs, Xbox, PS4</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;250.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <li>Full Size Mechanical Keyboard - RK100 wireless mechanical keyboard is 96% full size with compact 100 keys, which is solid, stable and durable. Especially suitable for the mechanical keyboard starters during gaming or working.</li>
+                <li>Customizable RGB Backlight- This RK100 gaming keyboard provides 18 RGB backlight modes, 8 monochrome backlight modes, and 1 full-color backlight. The software allows users to customize the lighting, making it brighter and more enjoyable for personalization.</li>
+                <li>Three Modes Connectivity - This mechanical keyboard includes 2.4Ghz wireless, Type-C-USB 2.0 wired and bluetooth 5.1 connections. And RK100 gaming keyboard could be connected with up to 3 devices via Bluetooth5.1; N-key rollover (NKRO) in the wired mode, all 100 keys are conflict free.</li>
+                <li>Hot-swappable Switches - RK ROYAL KLUDGE RK100 wireless keyboard can be hot swapped at wish and replaced by all of MX-similar mechanical switches (including Gateron, Cherry, etc.), supporting 3-pin/5-pin switches. This wireless keyboard is available in blue/brown/red switch.</li>
+                <li>3 USB Ports - This hot swappable keyboard is armed with a 3750mAh large battery and geared with 2 built-in USB pass-through ports and 1 Type-C port, this wireless keyboard is allowed to back up more facilities and works for long-time gaming/working. This gaming keyboard is compatible with Win/Mac dual system, unlimited use.</li>
+
+    </div>
+    </div>
+    <!--Thirteenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(12)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/13.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(12)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Men's Fashion Watch (Battery Operated)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 780</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(12)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Men's Fashion Watch', '780', 'Philippines: Batangas', '40', 'static/home/13.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Watch Dial Size: 40mm
+                    Watch's features/functions: Chronograph,Date
+                    Shape of the watch case: Round
+                    Model: GD569/2
+                    Watch glass material: Hardlex Glass
+                    Is Unisex: Unisex
+                    Where is the watch movement made: Japan
+                    Movement: Quartz
+                    Water Resistant: 30m
+                    Strap Material: Stainless Steel
+                    Warranty Type: No Warranty</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;780.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Fourteenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(13)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/14.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(13)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Artist's Paintbrush Set</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 280</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Artist's Paintbrush Set', '280', 'Philippines: Batangas', '40', 'static/home/14.PNG')">BUY NOW</button>
+            
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;280.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+               <p>Details:
+                Paintbrush Material: Nylon Hair + Aluminum Ferrule + Wood
+                Quantity: 23pcs/set
+                Paint Brush Model: Round Tips(2#,4#,8#,10#,12#,16#); Flat Tips(2#,4#,10#,14#); Filbert
+                Tips(4#,6#,8#,10#,14#); Angle Tips(4#,6#,8#,14#); Fan Tips(4#,8#); Liner Tips(1#); 1-Inch Brush(1")
+                Package Size: 24.5 * 9.0 * 4.3cm / 9.6 * 3.5 * 1.7in
+                Package Weight: 280g / 9.9oz
+                Packing List:
+                23 * Paint Brushes
+                1 * Scraper
+                1 * Cloth Bag</p>
+    </div>
+    </div>
+    <!--Fifteenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(14)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/15.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(14)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Oil Paints (Assorted)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 100</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(14)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Oil Paints (Assorted)', '100', 'Philippines: Batangas', '40', 'static/home/15.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Product Name: Acrylic/Water/Oil Color Paint Set
+                    Brand: BOMEIJIA
+                    Color: Acrylic Color/Water Color/Oil Color
+                    Specifications: 12Color/12ML
+                    Item Form: Gel
+                    Package Dimensions: 25cm * 10cm * 2cm
+                    Weight: 240 g/box</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;100.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Sixteenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(15)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/16.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(15)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Artist's Toning Paintbrushes</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 200</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(15)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Artist's Toning Paintbrushes', '200', 'Philippines: Batangas', '40', 'static/home/16.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Color: Wooden Color
+                    100% brand new and high quality
+                    To clean your brushes, just run them under warm water to wash out the paint and use your fingers to
+                    gently reshape brush hairs
+                    Note:
+                    1.Transition: 1cm=10mm=0.39inch
+                    2.Please allow 0-2cm error due to manual measurement. pls make sure you do not mind before you bid.
+                    3.Due to the difference between different monitors, the picture may not reflect the actual color of
+                    the item. Thank you!
+                    No retail packaging</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;200.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Seventeenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(16)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/17.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(16)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Fountain Pen Ink (Limited Stock)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 345</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(16)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Fountain Pen Ink (Limited Stock)', '345', 'Philippines: Batangas', '40', 'static/home/17.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    A special drawing ink for fountain pens, Pelikan Fount India is designed to have the characteristics
+                    of Indian ink (ie. waterproof and permanent archive quality)
+                    but is safe for use in a fountain pen (ordinary Indian ink would dry and clog a fountain pen and
+                    render it useless).
+                    However, we still recommend that you empty and flush your pen with clean water after use and do not
+                    ever let the ink dry in your pen. Contains nanocarbon particles</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;345.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Eighteenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(17)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/18.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(17)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">HBW Acrylic Paint</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 70</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(17)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('HBW Acrylic Paint', '70', 'Philippines: Batangas', '40', 'static/home/18.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Unleash your inner artist with the HBW Acrylic Paint Tube in assorted colors!
+
+                    High-Quality Pigments: This acrylic paint tube is made with high-quality pigments that produce
+                    vibrant and long-lasting colors.
+
+                    Assorted Colors: With a variety of colors to choose from, you can create beautiful masterpieces that
+                    are unique to your style and preference.
+
+                    User-Friendly Tube:The 30ml tube size is perfect for easy squeezing, allowing you to use every last
+                    bit of paint.
+
+                    This versatile acrylic paint can be used on a variety of surfaces
+
+                    such as canvas, paper, wood, ceramics and more! Perfect for both
+
+                    beginners and professionals alike.</p>
+                </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;70.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+    </div>
+    </div>
+    <!--Nineteenth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(18)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/19.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(18)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Fountain Pen (Jinhao x450)</h1></div>
+            <div class='rating'>Ratings:★★★★★</div>
+            <div class='price-details'>Price: 300</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(18)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Fountain Pen (Jinhao x450)', '300', 'Philippines: Batangas', '40', 'static/home/19.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Jinhao X450 Medium Flex nib Fountain PenSpecification :Color: Brown Marble ChunkyMaterial:
+                    CopperFountain Pen"s Tip Material: Other MetalsPen:
+                    Brown Marble,golden clip and trimCap Type: Snap on type capNib Type: Standard TypeConverter:
+                    Removable ink converter( may be replaced with international standard size ink
+                    cartridge.Also,you may use bottled ink.)Diameter: about 13mmLength: 14 cm approx.Package inlcuded:1
+                    x pen</p>
+                </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;300.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Twentienth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(19)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/20.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(19)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Fountain Pen (Jinhao x450)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 370</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(19)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Fountain Pen (Jinhao x450)', '370', 'Philippines: Batangas', '40', 'static/home/20.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details:
+                    Jinhao X450 Medium Flex nib Fountain PenSpecification :Color: Brown Marble ChunkyMaterial:
+                    CopperFountain Pen"s Tip Material: Other MetalsPen: Brown Marble,golden clip and trimCap Type: Snap
+                    on type capNib Type: Standard TypeConverter:
+                    Removable ink converter( may be replaced with international standard size ink cartridge.Also,you may
+                    use bottled ink.)Diameter: about 13mmLength: 14 cm approx.Package inlcuded:1 x pen</p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;370.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Twentyfirst-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(20)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/21.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(20)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Fountain Pen (Black And Gold Nib)</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 400</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(20)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Fountain Pen (Black And Gold Nib)', '400', 'Philippines: Batangas', '40', 'static/home/21.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+        </div>
+    </div>
+        </div>
+    <div class="right-side">
+    <h1 >&#8369;400.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <p>Details: Type: Fountain Pen</p>
+                <p>Weight: 35g</p>
+                <p>Material: Metal</p>
+                <p>Length:137mm/5.39inch</p>
+                <p>Nib size:0.5mm</p>
+                <p>Package: in the bag</p>
+                <p>Package include:1Pc Fountain Pen</p>
+               <h3> Note:</h3>
+                <p>Please allow 1-3cm difference due to manual measurement.</p>
+                <p>Due to light and screen difference, the item's color may be slightly different from the pictures.</p>
+                <p>Fountain Pen Ink Pen Writing Pen Business Ink Pen Golden Dragon Frosted Black Luxury Student</p>
+                <p>Stationery Office School Supplies Writing Supplies High Quality</p></div>
+    </div>
+    <!--TwentySecond-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(21)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/22.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(21)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Silver Artist's Paintbrush Set</h1></div>
+            <div class='rating'>Ratings: ★★★★★</div>
+            <div class='price-details'>Price: 305</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(21)">Show/Hide Details</button>
+            <button class="cart" onclick="add()">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Silver Artists Paintbrush Set', '305', 'Philippines: Batangas', '60', 'static/home/22.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>
+                <h2>Details: </h2>
+                <li>You can use our artist quality angle shader brush and can easily control what kind of brushstrokes
+                    you want with your painting, you will always be full of creative ideas while painting.
+                <li>Product name: 6 painting art acrylic brushes, flat head nylon duck tongue-shaped wooden pole oil
+                    painting pen set
+                <li> Material: made of high-quality wood</li>
+                <li>Color: composed of black + silver</li>
+                <li>Size:24*8*0.99 cm(9.45*3.15*0.39 in)</li>
+                <li>Includes: 6 painting art acrylic brushes, flat head nylon duck tongue-shaped wooden pole oil
+                    painting pen set
+                </li>
+                </p></div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;305.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Twentythird-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(22)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/23.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(22)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Plain Black Necktie</h1></div>
+            <div class='rating'>Ratings:★★★★★</div>
+            <div class='price-details'>Price: 170</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(22)">Show/Hide Details</button>
+            <button class="cart" onclick="addToCart('Plain Black Necktie', '170', 'static/home/23.PNG')">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage('Plain Black Necktie', '170', 'Philippines: Batangas', '40', 'static/home/23.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details: Condition:100% New
+                    Material:100% Handmade Polyester Silk
+                    Size:
+                    LENGTH: 145CM; WIDTH: 5CM
+                    Color:5 Color
+                    Quantity:1pc
+                    Conversion:1 mm = 0.0394 inch, 1 inch=25.4mm</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;170.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+    <!--Twentyfourth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(23)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/24.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(23)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Vintage Hanging Wall Clock</h1></div>
+            <div class='rating'>Ratings:★★★★★</div>
+            <div class='price-details'>Price: 580</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="toggle-button" onclick="toggleDetails(23)">Show/Hide Details</button>
+            <button class="cart" onclick="addToCart(' Vintage Hanging Wall Clock', '580', 'static/home/24.PNG')">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage(' Vintage Hanging Wall Clock', '580', 'Philippines: Batangas', '70', 'static/home/24.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">
+                <p>Details: Equipped with modern quartz clock movement,
+
+                    this cuckoo inspired wooden wall clock can surely help to tell time and
+
+                    get everything done on schedule even without the cuckoo sound.
+
+                    This wall clock is made of solid wood which makes the clock highly durable and features a vintage
+                    look.
+
+                    The elegant wooden color can easily blend in any decoration styles and enhances the overall
+                    aesthetics of your home decor.
+
+                    The battery operated wooden clock requires 1 x AA battery (not included) to work.</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;580.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+
+    </div>
+    </div>
+
+    <!--Twentyfifth-->
+    <div class="product">
+        <div class="left-side">
+        <div class="product-image-container">
+            <button class="arrow-button left-arrow" onclick="prevImage(24)">&#8249;</button>
+            <img class="product-image"
+                 src="static/home/25.PNG"
+                 alt="Product Image">
+            <button class="arrow-button right-arrow" onclick="nextImage(24)">&#8250;</button>
+        </div>
+        <div class="product-info">
+            <div><h1 class="product-name">Wall Clock (Roman Num.)</h1></div>
+            <div class='rating'>Ratings:★★★★★</div>
+            <div class='price-details'>Price: 435</div>
+            <div class='location'>Philippines: Batangas</div>
+            <div class='description'>Product Description</div>
+            <button class="cart" onclick="addToCart(' Wall Clock', '435', 'static/home/25.PNG')">ADD TO CART</button>
+            <button class="buy" onclick="openProductPage(' Wall Clock', '435', 'Philippines: Batangas', '120', 'static/home/25.PNG')">BUY NOW</button>
+            <div class="details" style="display: none;">      
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <h1 >&#8369;435.00</h1>
+            <p >No Import Fees Deposit & FREE Shipping to Philippines</p>
+            <p >FREE DELIVERY ON '' NATIONWIDE</p>
+            <p >Ships from: Amazon</p>
+             <p   >Returns: Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+               <p >Support: Product support included</p>
+
+               <h2>ABOUT THIS ITEM</h2>
+               <p>Details: Material: Iron Art
+                <li>Shape: Round</li>
+                <li>Style: Retro European Style</li>
+                <li>Display: Rome Figures</li>
+                <li>Diameter:40 cm/15.75"</li>
+                <li>Thickness:2.2 cm/0.87"</li>
+                <li>Power Supply:1 x AA Batteries(Not Included)</li>
+                <li>Applicable places: Living room,Bedroom,Office,Study,Bar,Cafe and other store places</li>
+                <li>Make your room different.</li>
+                <li>Mute,energy saving,precision.</li>
+                <li>This clock looks stylish on any wall.</p>
+
+    </div>
+    </div>
+</section>
+
+
+<script>
+    function openProductPage(name, price, location, ship, imageUrl) {
+        var url = href='/buy?name=' + encodeURIComponent(name) + '&price=' + price + '&location=' + encodeURIComponent(location) + '&ship=' + ship +  '&imageUrl=' + encodeURIComponent(imageUrl);
+        window.open(url, '_blank');
+    }
+
+    function addToCart(productName, price, imageUrl) {
+        var formData = new FormData();
+        formData.append('product_name', productName);
+        formData.append('price', price);
+        formData.append('image_url', imageUrl); 
+    
+        fetch('/add_to_cart', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/cart';
+            } else {
+                return response.text().then(data => {
+                    throw new Error(data);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+            alert('Failed to add product to cart: ' + error.message);
+        });
+    }
+
+</script>
+
+
+
+<script>
+            function toggleDetails(index) {
+                var details = document.getElementsByClassName('details') [index];
+                details.style.display = details.style.display === 'none' ? 'block' : 'none';
+            }
+            
+        
+    
+    
+</script>
+
+<script>
+            function choose() {
+                var details = document.querySelector('#hidden-btn');
+                details.style.display = details.style.display === 'none' ? 'block' : 'none';
+            
+            }
+            
+        
+    
+    
+</script>
+
+
+<button onclick="goBack()">Go Back</button>
+
+
+<script>
+        var products = [
+    {
+        name: "Glasses",
+        images: ["C:/PROJECT AMAZONwdb/static/home/1.PNG", "C:/PROJECT AMAZONwdb/static/home/2.PNG", "C:/PROJECT AMAZONwdb/static/home/3.PNG"],
+        currentImageIndex: 0
+    },
+    {
+        name: "Keyboard Mouse",
+        images: ["static/home/2.PNG", "static/home/a2.png", "static/home/a1.png"],
+        currentImageIndex: 1
+    },
+    {
+        name: "Canvas",
+        images: ["static/home/3.PNG", "static/home/a3.png"],
+        currentImageIndex: 2
+    },
+    {
+        name: "Formal Tie",
+        images: ["static/home/4.PNG", "static/home/a4.png", "static/home/a5.png"],
+        currentImageIndex: 3
+    },
+    {
+        name: "Wireless Keyboard",
+        images: ["static/home/5.PNG", "static/home/a6.png", "static/home/a7.png"],
+        currentImageIndex: 4
+    },
+    {
+        name: "Wireless Mouse",
+        images: ["static/home/6.PNG", "static/home/a8.png"],
+        currentImageIndex: 5
+    },
+    {
+        name: "Fountain Pen Ink",
+        images: ["static/home/7.PNG", "static/home/a9.png"],
+        currentImageIndex: 6
+    },
+    {
+        name: "Fountain Pen",
+        images: ["static/home/8.PNG", "static/home/10.PNG", "static/home/cl1.PNG"],
+        currentImageIndex: 7
+    },
+    {
+        name: "Monte Mart",
+        images: ["static/home/9.PNG", "static/home/a10.png"],
+        currentImageIndex: 8
+    },
+    {
+        name: "Keyboard",
+        images: ["static/home/10.PNG", "static/home/a11.png"],
+        currentImageIndex: 9
+    },
+    {
+        name: "Paint Set",
+        images: ["static/home/11.PNG", "static/home/a12.png"],
+        currentImageIndex: 10
+    },
+    {
+        name: "Keyboard yellowblack",
+        images: ["static/home/12.PNG", "static/home/a6.png"],
+        currentImageIndex: 11
+    },
+    {
+        name: "Men Watch",
+        images: ["static/home/13.PNG", "static/home/a16.png"],
+        currentImageIndex: 12
+    },
+    {
+        name: "Paintbrush set",
+        images: ["static/home/14.PNG", "static/home/10.PNG"],
+        currentImageIndex: 13
+    },
+    {
+        name: "assorted",
+        images: ["static/home/15.PNG", "static/home/10.PNG"],
+        currentImageIndex: 14
+    },
+    {
+        name: "toning brush",
+        images: ["static/home/16.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 15
+    },
+    {
+        name: "ink",
+        images: ["static/home/17.PNG", "static/home/19.PNG", "static/home/a9.png"],
+        currentImageIndex: 16
+    },
+    {
+        name: "HBW",
+        images: ["static/home/18.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 17
+    },
+    {
+        name: "jinhao x450",
+        images: ["static/home/19.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 18
+    },
+    {
+        name: " x450",
+        images: ["static/home/20.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 19
+    },
+    {
+        name: "blackgold",
+        images: ["static/home/21.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 20
+    },
+    {
+        name: "silver brush",
+        images: ["static/home/22.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 21
+    },
+    {
+        name: "plain tie",
+        images: ["static/home/23.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 22
+    },
+    {
+        name: "hanging clock",
+        images: ["static/home/24.PNG", "static/home/10.PNG", "static/home/cl1.PNG", "static/home/cl3.PNG"],
+        currentImageIndex: 23
+    },
+    {
+        name: "wall clock",
+        images: ["static/home/25.PNG"],
+        currentImageIndex: 24
+    },
+
+
+];
+
+var currentProductIndex = 0;
+
+function nextImage(productIndex) {
+    var currentImageIndex = products[productIndex].currentImageIndex;
+    currentImageIndex = (currentImageIndex + 1) % products[productIndex].images.length;
+    var productImages = document.querySelectorAll(".product-image");
+    productImages[productIndex].src = products[productIndex].images[currentImageIndex];
+    products[productIndex].currentImageIndex = currentImageIndex;
+}
+
+function prevImage(productIndex) {
+    var currentImageIndex = products[productIndex].currentImageIndex;
+    currentImageIndex = (currentImageIndex - 1 + products[productIndex].images.length) % products[productIndex].images.length;
+    var productImages = document.querySelectorAll(".product-image");
+    productImages[productIndex].src = products[productIndex].images[currentImageIndex];
+    products[productIndex].currentImageIndex = currentImageIndex;
+}
+
+        function goBack() {
+            window.close(); 
+            window.location.href = "index.html";
+        }
+    
+    
+    
+</script>
+
+<script>
+        window.onload = function() {
+            var content = document.getElementById('content');
+            var contentHeight = content.scrollHeight;
+            content.style.height = contentHeight + 'px';
+        };
+
+        window.onresize = function() {
+            var content = document.getElementById('content');
+            var contentHeight = content.scrollHeight;
+            content.style.height = contentHeight + 'px';
+        };
+    
+    
+    
+</script>
+
+<script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";  
+        
+        setTimeout(showSlides, 3500);
+        }
+    
+    
+    
+</script>
+
+<script>
+        var SlideIndex = 0;
+        ShowSlides();
+
+        function ShowSlides() {
+            var j;
+            var Slides = document.getElementsByClassName("myslides");
+        
+        for (j = 0; j < Slides.length; j++) {
+            Slides[j].style.display = "none";
+        }
+        
+        SlideIndex++;
+        if (SlideIndex > Slides.length) {SlideIndex = 1}
+        Slides[SlideIndex-1].style.display = "block";  
+        
+        setTimeout(ShowSlides, 7000);
+        }
+    
+    
+    
+</script>
+
+<footer>
+    <h1 class="foot">
+        <img src="static/home/head.png" style="width: 100%">
+    </h1>
+    <div class="foot-row" style="display: flex;justify-content:space-between; padding-left:10px;padding-right:10px;">
+        <div class="column">
+            <a href="https://music.amazon.com/?ref=dm_aff_amz_com">AMAZON MUSIC</a>
+            <a href="https://www.amazon.com/gp/browse.html?node=230659011&ref_=footer_amazonglobal">AMAZON
+                GLOBAL</a>
+            <a href="https://pro.imdb.com/signup/index.html?u=http%3A%2F%2Fpro.imdb.com%2F%3Fref_%3Damzn_nav_ftr">ImDb
+                PRO</a>
+            <a href="https://advertising.amazon.com/?ref=footer_advtsing_amzn_com">AMAZON Ads</a>
+            <a href="https://blinkforhome.com/?ref=nav_footer">Bink</a>
+        </div>
+        <div class="column">
+            <a href="https://www.amazon.com/gp/browse.html/ref=vas_sf_load_?node=8098158011">HOME SERVICES</a>
+            <a href="https://kdp.amazon.com/en_US/">KINDLE DIRECT PUBLISHING</a>
+            <a href="https://eero.com/">eero WIFI</a>
+            <a href="https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=amazonfooter">AMAZON
+                WEB SERVICES</a>
+            <a href="https://videodirect.amazon.com/home/landing">PRIME VIDEO DIRECT</a>
+            
+        </div>
+        <div class="column">
+            <a href="https://www.abebooks.com/"> ABE BOOKS</a>
+            <a href="https://www.audible.com/">AUDIBLE</a>
+            <a href="https://www.shopbop.com/">SHOPBOP</a>
+            <a href="https://ring.com/neighbors">NEIGHBOR'S APP</a>
+            <a href="https://www.acx.com/">ACX</a>
+            
+        </div>
+        <div class="column">
+            <a href="https://sell.amazon.com/?ld=AZUSSOA-footer-aff&ref_=footer_sell">SELL ON AMAZON</a>
+            <a href="https://www.goodreads.com/">GOODREADS</a>
+            <a href="https://www.zappos.com/">ZAPPOS</a>
+            <a href="https://www.pillpack.com/">PILLPACK</a>
+            <a href="https://www.amazon.com/business/register/org/landing?ref_=footer_retail_b2b">AMAZON BUSINESS</a>
+            
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

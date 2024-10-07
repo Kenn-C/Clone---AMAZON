@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login and Sign Up</title>
+  <style>
+    body {
+      background-color: rgb(42, 35, 89);
+    }
+    h2 {
+      text-align: center;
+    }
+    .floating-tab, .floating-tab2 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgb(144, 142, 146);
+      padding: 20px;
+      border: 1px solid #2c1656;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .floating-tab {
+      height: 40%;
+      width: 20%;
+    }
+    .floating-tab2 {
+      height: 70%;
+      width: 30%;
+    }
+    .close {
+      cursor: pointer;
+    }
+    .log {
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .user, .pass, .confirm, .email, .address {
+      margin: 10px;
+      width: 90%; 
+      max-width: 300px;
+    }
+    .logbut, .signbut {
+      font-size: 22px;
+      margin-top: 20px;
+    }
+    .logbut {
+      display: block;
+    }
+    .signbut {
+      display: block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-tab" id="loginTab">
+    <span class="close" onclick="toggleTabs('login')">x</span>
+    <h2>Login</h2>
+    <form class="log" action="/login" method="post">
+      Username: <input class="user" type="text" name="username" required><br>
+      Password: <input class="pass" type="password" name="password" required><br>
+      <input class="logbut" type="submit" value="Login">
+      <input class="signbut" type="button" value="Sign up" onclick="toggleTabs('signup')">
+    </form>
+  </div>
+
+  <div class="floating-tab2" id="signupTab">
+    <span class="close" onclick="toggleTabs('signup')">x</span>
+    <h2>Sign Up</h2>
+    <form class="log" action="/signup" method="post">
+      Username: <input class="user" type="text" name="username" required><br>
+      Password: <input class="pass" type="password" name="password" required><br>
+      Confirm Password: <input class="confirm" type="password" name="confirm" required><br>
+      Email: <input class="email" type="email" name="email" required><br>
+      Delivery Address: <input class="address" type="text" name="address" required><br>
+      <input class="logbut" type="submit" value="Sign Up">
+      <input class="signbut" type="button" value="Go Back" onclick="toggleTabs('login')">
+    </form>
+  </div>
+
+  <script>
+    function toggleTabs(tab) {
+      var loginTab = document.getElementById('loginTab');
+      var signupTab = document.getElementById('signupTab');
+      if (tab === 'login') {
+        loginTab.style.display = 'block';
+        signupTab.style.display = 'none';
+      } else if (tab === 'signup') {
+        loginTab.style.display = 'none';
+        signupTab.style.display = 'block';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      toggleTabs('login');
+    });
+  </script>
+</body>
+</html>

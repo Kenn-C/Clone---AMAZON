@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/buy.css">
+    <title>Product Details</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            background-color: rgb(95, 92, 90);
+            padding: 0;           
+        }
+
+        .product-details {
+            position: relative;
+            padding: 20px;
+            background-color: #fff; /* White background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 20px;
+        }
+        .product-details h2, .product-details p {
+            margin: 0;
+        }
+
+        /* Styling for buttons */
+        .btn {
+            padding: 10px 20px;
+            background-color: #6c757d; /* Gray button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #495057; /* Darker gray on hover */
+        }
+
+        /* Checkout button */
+        .checkout-btn {
+            background-color: #007bff; /* Blue checkout button */
+        }
+        .checkout-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .product-details {
+                margin: 10px;
+            }
+        }
+
+        .image img {           
+            position: fixed;
+            left: 100px;
+            top: 150px;
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            
+            
+        }
+        .name {
+            position:fixed;
+            left: 500px;
+            top: 130px;
+            font-size: larger;
+            
+        }
+        .price {
+            position: fixed;
+            left: 500px;
+            top: 200px;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+        .location {
+            position: fixed;
+            left: 500px;
+            top: 270px;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+        }
+
+        .shipping-btn {
+            padding: 10px 20px;
+            background-color: rgb(45, 30, 90);
+            color: rgb(243, 189, 123);
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            z-index: 1;
+            left: 1000px;
+            top: 200px;
+        }
+        .shipping-opt {
+            display: none;
+            position: absolute;
+            flex-wrap: wrap;
+            width: 40%;
+            height: 70%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        .shipping-opt h2 {
+            margin-top: 0;
+        }
+        .shipping-opt ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .shipping-opt ul li {
+            margin-bottom: 10px;
+        }
+
+        .payment-btn {
+            padding: 10px 20px;
+            background-color: rgb(45, 30, 90);
+            color: rgb(243, 189, 123);
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            z-index: 1;
+            left: 1000px;
+            top: 400px;
+        }
+        .payment-opt {
+            display: none;
+            position: absolute;
+            flex-wrap: wrap;
+            width: 40%;
+            height: 70%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        .payment-opt h2 {
+            margin-top: 0;
+        }
+        .payment-opt ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-opt ul li {
+            margin-bottom: 10px;
+        }
+
+        .total {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 15%;
+            width: 100%;
+            background-color: rgb(69, 53, 135);
+            color: #a1a7a6;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .total p {
+            font-size: large;
+            
+            position: relative;
+            justify-self: left;
+            margin: 0;
+        }
+        .check {
+            font-size: large;
+            padding: 10px 20px;
+            background-color: #545356;
+            color: aliceblue;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        .checkout-details {
+            display: none;
+            position: absolute;
+            flex-wrap: wrap;
+            width: 30%;
+            height: 75%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        .checkout-details p {
+            display: absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            margin: 30px 0;
+            font-weight: 500;
+            
+        }
+        .address {
+            position: relative;
+            bottom: 30px;
+            width: 70%;
+            height: 20px;
+        }
+        .DA {
+            display: absolute;
+            position: relative;
+            bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="head"><h1>Checkout Details</h1></div>
+    <div id="product-details">
+        <div class="name"><h2><span id="product-name"></span></h2></div>
+        <div class="price"><p>Amount: ₱<span id="product-price"></span></p></div>
+        <div class="location"><p>Ship From: <span id="product-location"></span></p></div>
+        <div class="image"><img id="product-image" src="" alt="Product Image"></div>
+        <div class="shipping-fee" style="display: none;"><p>Shipping Fee: P<span id="product-shipping"></span></p></div>
+    </div>
+
+    
+
+    <button class="shipping-btn" onclick="toggleShippingOptions()">SHIPPING OPTIONS</button>
+    <div id="shipping-opt" class="shipping-opt">
+        <button class="close-btn" onclick="toggleShippingOptions()">x</button>
+        <h2>SELECT SHIPPING OPTIONS</h2>
+        <ul>
+            <li><button onclick="shipoption('Fed Ex', '50')">Fed Ex ₱50</button></li>
+            <li><button onclick="shipoption('LBC Express', '80')">LBC Express ₱80</button></li>
+            <li><button onclick="shipoption('Standard International', '199')">Standard International ₱199</button></li>
+            <li><button onclick="shipoption('Go Xpress', '129')">Go Xpress ₱129</button></li>
+        </ul>
+    </div>
+
+
+    <button class="payment-btn" onclick="togglePaymentOptions()">CHOOSE YOUR PAYMENT METHOD</button>
+    <div id="payment-opt" class="payment-opt">
+        <button class="Close-btn" onclick="togglePaymentOptions()">x</button>
+        <h2>SELECT PAYMENT OPTIONS</h2>
+        <ul>
+            <li><button onclick="selectPaymentOption('VISA')">VISA CARD</button></li>
+            <li><button onclick="selectPaymentOption('Mastercard')">Mastercard</button></li>
+            <li><button onclick="selectPaymentOption('Cash on Delivery')">Cash on Delivery</button></li>
+            <li><button onclick="selectPaymentOption('Paypal')">Paypal</button></li>
+        </ul>
+    </div>
+
+    <div class="total">
+        <p>Amount to Pay: ₱<span id="total-amount">0.00</span></p>
+        <button class="check" onclick="checkout()">Checkout</button>
+    </div>
+
+    <div id="checkout-details" class="checkout-details">
+        <h2>Checkout Details</h2>
+        <ul>
+            <p id="checkout-product-name"></p>
+            <p id="checkout-product-price"></p>
+            <p id="checkout-shipping"></p>
+            <p id="checkout-payment"></p>
+            <p id="checkout-total"></p>
+            <p class="DA">Delivery Address:</p> 
+            
+            <form action="/submit_order" method="POST" onsubmit="return order();">
+                <input type="hidden" name="product_name" id="form-product-name">
+                <input type="hidden" name="total_amount" id="form-total-amount">
+                <input type="hidden" name="payment_method" id="form-payment-method">
+                <input type="hidden" name="shipping_method" id="form-shipping-method">
+                <label for="delivery_address">Delivery Address:</label>
+                <input type="text" name="delivery_address" id="form-delivery-address" required>
+                <button type="submit">Confirm Order</button>
+            </form>
+        </ul>
+    </div>
+
+        
+
+
+    <script>
+        function order() {
+            document.getElementById('form-product-name').value = document.getElementById('product-name').textContent;
+            document.getElementById('form-total-amount').value = document.getElementById('total-amount').textContent;
+            document.getElementById('form-payment-method').value = document.querySelector('.payment-btn').textContent.replace('PAYMENT OPTIONS: ', '');
+            document.getElementById('form-shipping-method').value = document.querySelector('.shipping-btn').textContent.replace('SHIPPING OPTIONS: ', '');
+            document.getElementById('form-delivery-address').value = document.querySelector('.address').value;
+    
+            return True
+        }
+    </script>
+
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        var productName = getUrlParameter('name');
+        var productPrice = getUrlParameter('price');
+        var productLocation = getUrlParameter('location');
+        var productImage = getUrlParameter('imageUrl');
+
+        document.getElementById('product-name').textContent = productName;
+        document.getElementById('product-price').textContent = productPrice;
+        document.getElementById('product-location').textContent = productLocation;
+        document.getElementById('product-image').src = productImage;
+
+    </script>
+
+    <script>
+        function toggleShippingOptions() {
+            var shippingOptions = document.getElementById("shipping-opt");
+            if (shippingOptions.style.display === "block") {
+                shippingOptions.style.display = "none";
+            } else {
+                shippingOptions.style.display = "block";
+            }
+        }
+    </script> 
+
+    <script>
+            function shipoption(option, shippingFee) {
+                console.log("shipping selected", option)
+                console.log("fee", shippingFee)
+
+                var shippingBtn = document.querySelector(".shipping-btn");
+                shippingBtn.textContent = "SHIPPING OPTIONS: " + option;
+
+                var shippingOptions = document.getElementById("shipping-opt");
+                shippingOptions.style.display = "none";
+
+                var productShipping = document.getElementById("product-shipping");
+                productShipping.textContent = shippingFee;
+
+                updateTotalAmount(shippingFee);
+            }
+
+            function updateTotalAmount(shippingFee) {
+                var productPriceText = document.getElementById('product-price').textContent;
+                var productPrice = parseFloat(productPriceText.replace('').replace(/[^\d.-]/g, ''));
+
+                if (isNaN(productPrice)) {
+                    console.error('Invalid product price:', productPriceText);
+                    return;
+                }
+
+                var totalAmount = parseFloat(productPrice) + parseFloat(shippingFee);
+                
+                var totalAmountSpan = document.getElementById("total-amount");
+                totalAmountSpan.textContent = totalAmount.toFixed(2);
+
+                }
+        
+    </script>
+
+    <script>
+        function togglePaymentOptions() {
+            var paymentOptions = document.getElementById("payment-opt");
+            if (paymentOptions.style.display === "block") {
+                paymentOptions.style.display = "none";
+            } else {
+                paymentOptions.style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        function selectPaymentOption(options) {
+            var paymentBtn = document.querySelector(".payment-btn");
+            paymentBtn.textContent = "PAYMENT OPTIONS: " + options;
+
+            var paymentOptions = document.getElementById("payment-opt");
+            paymentOptions.style.display = "none"
+        }
+    </script>
+
+    <script>
+        function showCheckoutDetails() {
+            var checkoutDetails = document.getElementById("checkout-details");
+            if (checkoutDetails.style.display === "block") {
+                checkoutDetails.style.display = "none";
+            } else {
+                checkoutDetails.style.display = "block";
+            }
+        }
+
+    </script>
+
+    <script>
+        function checkout() {
+            var productName = document.getElementById('product-name').textContent;
+            var productPrice = document.getElementById('product-price').textContent;
+            var shippingOption = document.querySelector(".shipping-btn").textContent.replace('SHIPPING OPTIONS: ', '');
+            var shippingFee = document.getElementById("product-shipping").textContent.replace('₱', '');
+            console.log('FEE: ', shippingFee)
+            var paymentOption = document.querySelector(".payment-btn").textContent.replace('PAYMENT OPTIONS: ', '');
+            var totalAmount = document.getElementById("total-amount").textContent;
+
+            document.getElementById("checkout-product-name").textContent = "Product Name: " + productName;
+            document.getElementById("checkout-product-price").textContent = "Product Price: ₱" + productPrice;
+            document.getElementById("checkout-shipping").textContent = "Shipping Option: " + shippingOption + " : ₱ " + shippingFee;
+            document.getElementById("checkout-payment").textContent = "Payment Option: " + paymentOption;
+            document.getElementById("checkout-total").textContent = "Total Amount: ₱" + totalAmount;
+
+            showCheckoutDetails();
+        }
+        
+    </script>
+
+    <script>
+        function cancelcheck() {
+            var cancelcheckout = document.getElementById("checkout-details");
+            if (cancelcheckout.style.display === "block") {
+                cancelcheckout.style.display = "none";
+            } else {
+                cancelcheckout.style.display = "block";
+            }
+        }
+
+    </script>
+</body>
+</html>

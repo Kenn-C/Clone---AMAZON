@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <style>
+        /* Add CSS styles from the provided code */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .cancel-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .cancel-button:hover {
+            background-color: darkred;
+        }
+
+        .received-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .received-button:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .action-buttons button {
+            margin-right: 10px;
+        }
+
+        .section-header {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        
+        /* Add style for section tables */
+        .section-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .section-table th,
+        .section-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .section-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .section-table tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Details</h1>
+
+    <!-- Pending Orders Section -->
+    <div class="section-header">Pending Orders</div>
+    <table class="section-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Total Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in pending_orders %}
+                <tr id="order-{{ order.id }}">
+                    <td>{{ order.product_name }}</td>
+                    <td>{{ order.total_amount }}</td>
+                    <td class="action-buttons">
+                        <button onclick="showModal('{{ order.product_name }}', '{{ order.total_amount }}', '{{ order.payment_method }}', '{{ order.shipping_method }}', '{{ order.delivery_address }}', '{{ order.id }}', '{{ order.delivery_time }}')" id="details-button-{{ order.id }}">Details</button>
+                        <button class="cancel-button" onclick="cancelOrder('{{ order.id }}')">Cancel Order</button>
+                        <button class="received-button{% if order.overdue %} {% else %} disabled {% endif %}" id="received-{{ order.id }}" onclick="receiveOrder('{{ order.id }}')" {% if not order.overdue %} disabled {% endif %}>Order Received</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Completed Orders Section -->
+    <div class="section-header">Completed Orders</div>
+    <table class="section-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in completed_orders %}
+                <tr>
+                    <td>{{ order.product_name }}</td>
+                    <td>{{ order.total_amount }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Cancelled Orders Section -->
+    <div class="section-header">Cancelled Orders</div>
+    <table class="section-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in cancelled_orders %}
+                <tr>
+                    <td>{{ order.product_name }}</td>
+                    <td>{{ order.total_amount }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Product Details</h2>
+            <p><strong>Product Name:</strong> <span id="modalProductName"></span></p>
+            <p><strong>Total Amount:</strong> <span id="modalTotalAmount"></span></p>
+            <p><strong>Payment Method:</strong> <span id="modalPaymentMethod"></span></p>
+            <p><strong>Shipping Method:</strong> <span id="modalShippingMethod"></span></p>
+            <p><strong>Delivery Address:</strong> <span id="modalDeliveryAddress"></span></p>
+            <p><strong>Estimated Delivery Time:</strong> <span id="modalDeliveryTime"></span></p>
+            <button id="cancelOrderButton" class="cancel-button" onclick="cancelOrder(this)">Cancel Order</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal(productName, totalAmount, paymentMethod, shippingMethod, deliveryAddress, orderId, deliveryTime) {
+            document.getElementById('modalProductName').textContent = productName;
+            document.getElementById('modalTotalAmount').textContent = totalAmount;
+            document.getElementById('modalPaymentMethod').textContent = paymentMethod;
+            document.getElementById('modalShippingMethod').textContent = shippingMethod;
+            document.getElementById('modalDeliveryAddress').textContent = deliveryAddress;
+            document.getElementById('modalDeliveryTime').textContent = deliveryTime;
+            document.getElementById('cancelOrderButton').setAttribute('data-order-id', orderId);
+            document.getElementById('myModal').style.display = "block";
+    
+            const orderReceivedButton = document.getElementById(`received-${orderId}`);
+            const deliveryTimeDate = new Date(deliveryTime);
+            const now = new Date();
+    
+            // enable button if overdue
+            if (now >= deliveryTimeDate) {
+                orderReceivedButton.removeAttribute('disabled');
+            } else {
+                // disable button
+                orderReceivedButton.setAttribute('disabled', 'disabled');
+                const timeout = deliveryTimeDate.getTime() - now.getTime();
+                setTimeout(() => {
+                    orderReceivedButton.removeAttribute('disabled');
+                }, timeout);
+            }
+        }
+    
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+    
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+    
+        function cancelOrder(orderId) {
+            fetch('/cancel_order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'order_id=' + orderId
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('order-' + orderId).remove();
+                    closeModal();
+                } else {
+                    alert('Failed to cancel order.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    
+        function receiveOrder(orderId) {
+            fetch('/receive_order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'order_id=' + orderId
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('order-' + orderId).remove();
+                    closeModal();
+                } else {
+                    alert('Failed to mark order as received.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+    
+
+</body>
+</html>
